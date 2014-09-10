@@ -1,0 +1,19 @@
+{
+  "name": "angular_mean",
+  "version": "1.0.0",
+  "description": "Angular representation of Mean, Median and Mode",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sirjerky/angular-mmm.git"
+  },
+  "author": "Adam Brown",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sirjerky/angular-mmm/issues"
+  },
+  "homepage": "https://github.com/sirjerky/angular-mmm"
+}
