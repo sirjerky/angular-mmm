@@ -59,7 +59,8 @@ module.exports = function(app){
     };
 
     $scope.getResults = function() {
-      var data = $scope.results.input.split(',');
+      var data = $scope.results.input.split(/\D/);
+      data = data.filter(Boolean);
       $scope.getMean(data);
       $scope.getMedian(data);
       $scope.getMode(data);
