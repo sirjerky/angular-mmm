@@ -1,5 +1,5 @@
 <div data-ng-controller='calcController'>
-  <input type="text" data-ng-model="results.input">
+  <input type="text" data-ng-model="results.input" data-ng-change="getResults()">
   <button data-ng-click='getResults()'>Get Results</button>
   <p>
     Mean: {{results.mean}}</br>

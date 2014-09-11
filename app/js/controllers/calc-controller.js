@@ -48,7 +48,6 @@ module.exports = function(app){
       numbers.sort(function compareNumbers(a,b){
         return a - b;
       });
-      console.log(numbers);
       // next check for even or odd
       if(numbers.length % 2 === 0){
         i = numbers.length / 2;
