@@ -5,6 +5,7 @@ module.exports = function(grunt){
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-browserify');
   grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-karma');
 
   grunt.initConfig({
     clean: {
@@ -37,18 +38,25 @@ module.exports = function(grunt){
           transform: ['debowerify'],
           debug: true
         },
-        src: ['test/mocha/**/*.js'],
-        dest: ['test/testbundle.js']
+        src: ['tests/angular/**/*.js'],
+        dest: 'tests/testbundle.js'
       }
     },
 
     jshint: {
-      files: ['app/js/**/*.js'],
+      files: ['app/js/**/*.js', 'test/**/*.js'],
       options: {
         jshintrc: true
+      }
+    },
+
+    karma: {
+      unit: {
+        configFile: 'karma.config.js'
       }
     }
   });
 
-  grunt.registerTask('build', ['clean:dev', 'jshint', 'browserify:dev', 'copy:dev'])  
+  grunt.registerTask('build', ['clean:dev', 'jshint', 'browserify:dev', 'copy:dev']);
+  grunt.registerTask('test', ['jshint', 'browserify:test', 'karma:unit']);  
 };
